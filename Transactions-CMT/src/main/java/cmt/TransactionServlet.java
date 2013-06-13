@@ -38,7 +38,7 @@ public class TransactionServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         PrintWriter writer = resp.getWriter();
-        String responseText = "Aspon to funguje";
+        String responseText = "";
         String attr = req.getParameter("attribute");
         String trans = req.getParameter("transaction");
 

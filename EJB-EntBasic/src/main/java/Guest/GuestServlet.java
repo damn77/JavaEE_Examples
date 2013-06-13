@@ -18,6 +18,8 @@ public class GuestServlet extends HttpServlet {
 	static String PAGE_HEADER = "<html><head><title>EJB-EntityBasic</title></head><body>";
 
     static String PAGE_CONTENT = "<h1>EJB - Entity Beans - Basic Guestbook</h1>"
+    		+ "<p> This guestbook is simplest version of guestbooks. Simply stores every visit as individual entity with unique id." 
+    		+ "</p>"
     		+ "<form>"
             + "Name: <input type=\"text\" name=\"name\" /><br />"
             + "<input type=\"submit\" value=\"Submit\" /><br />"

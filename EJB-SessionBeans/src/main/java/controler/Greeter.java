@@ -30,13 +30,13 @@ import java.io.Serializable;
 public class Greeter implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-    private StatefulGreeterEJB greeterStateFul;   
+    private StatefulGreeterEJB greeterStateful;   
     @EJB private StatelessClockEJB clockStateless;
     @EJB private SigletonClockEJB clockSingleton;
     
     @EJB
     public void setGreeter(StatefulGreeterEJB g) {
-    	greeterStateFul = g;
+    	greeterStateful = g;
     }
     
     public String getDate() {
@@ -52,15 +52,15 @@ public class Greeter implements Serializable {
     }
     
     public void setName(String name) {
-    	if (greeterStateFul!=null) greeterStateFul.setHello(name);
+    	if (greeterStateful!=null) greeterStateful.setHello(name);
     	else {
     		setGreeter(new StatefulGreeterEJB());
-    		greeterStateFul.setHello(name);
+    		greeterStateful.setHello(name);
     	}
     }
 
     public String getHello() {
-    	if (greeterStateFul!=null) return greeterStateFul.sayHello();
-    	else return "Class greeterStateFul has not yet been initialized";
+    	if (greeterStateful!=null) return greeterStateful.sayHello();
+    	else return "Class greeterStateful has not yet been initialized";
     }
 }

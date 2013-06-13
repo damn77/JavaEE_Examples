@@ -18,6 +18,8 @@ public class GuestServlet extends HttpServlet {
 	static String PAGE_HEADER = "<html><head><title>EJB-EntEmb</title></head><body>";
 
     static String PAGE_CONTENT = "<h1>EJB - Entity Beans - Guestbook with Embedded Bean</h1>"
+    		+ "<p> This guestbook can store guests name in single embbeded object but first and last name are separate and in different columns in table." 
+    		+ "</p>"
     		+ "<form>"
             + "First Name: <input type=\"text\" name=\"fname\" /><br />"
             + "Last Name: <input type=\"text\" name=\"lname\" /><br />"

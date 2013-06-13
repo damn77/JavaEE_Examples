@@ -45,17 +45,20 @@ public class TranslationBackingBean implements Serializable{
     }
     
     public String getUnknownHello() {
-    	Annotation qualifier = choice.equals("ENG") ?
-    		      new EnglishTranslateService() : new SpanishTranslateService();
-    		      TranslateService TS = unknownTranslateService.select(qualifier).get();
-    	return TS.hello();
+    	Annotation qualifier = null;
+    	
+    	if (choice.equals("ENG"))  qualifier =  new EnglishTranslateService();
+    	else if (choice.equals("SPA")) qualifier =  new SpanishTranslateService();
+    	
+    	if (qualifier!=null) return unknownTranslateService.select(qualifier).get().hello();
+    	else return "Incorect language identifier";
     }
 
     public void check() {
-    	if (choice.equals("ENG"))
-    		System.out.println(" choice is ENG -> "+ choice);
-    	else System.out.println(" choice is NOT ENG -> "+ choice);
-    		
+//    	if (choice.equals("ENG"))
+//    		System.out.println(" choice is ENG -> "+ choice);
+//    	else System.out.println(" choice is NOT ENG -> "+ choice);
+//    		
      }
      
 
