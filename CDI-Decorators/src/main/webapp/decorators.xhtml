@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+   xmlns:ui="http://java.sun.com/jsf/facelets"
+   xmlns:h="http://java.sun.com/jsf/html"
+   xmlns:f="http://java.sun.com/jsf/core">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>LogIn Decorator</title>
+</head>
+
+<body>
+   <div id="content">
+      <h1>Decorator managing validation of user rights</h1>
+      <p>
+      By clicking on button Method you invoke method of application that is caught by decorator <br />
+      and depending on your login and password it is either allowed to continue or it is stopped.<br /><br />
+      Only correct user is login = "admin" and password = "password"<br />
+      Above form you can see under what login and password application sees you. 
+      </p>
+      <p>
+      Login: <b>#{app.login} </b><br />
+      Password: <b>#{app.password} </b><br />
+	  Message: #{messageBoard.message}
+      </p>
+      <div>	
+	      <h:form id="LogIn">
+	        <h:outputLabel>Login: </h:outputLabel>
+	        <h:inputText id="login" value="#{app.login}"
+	               required="true" size="20"/>
+			<br />
+			<h:outputLabel>Password: </h:outputLabel>
+	        <h:inputSecret id="pswd" type="password" value="#{app.password}"
+	               required="true" size="20"/>
+	        <br />
+			<h:commandButton id="LogInButton" value="Log In" />
+			<br />                                    
+		  </h:form> 
+	  </div>
+      
+      <div>
+      <h:form id="Method">
+      <h:commandButton id="method" value="Method" action="#{app.method()}" immediate="true" />
+      </h:form>
+      </div>     
+	</div>
+   <br style="clear: both" />
+
+</body>
+</html>

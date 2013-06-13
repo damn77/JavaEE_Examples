@@ -1,0 +1,32 @@
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>CDI - Translator</title>
+</head>
+<body>
+	<h1>CDI - Benefits of Qualifier and Alternative specification</h1>
+    <div>
+        English Hello: #{translation.englishHello} <br /> Spanish Hello: #{translation.spanishHello}
+    </div>
+    <br />
+    <div>
+    	Unknown Hello: #{translation.unknownHello}
+    	<br />
+    	<br />
+        Pick your preference - Write "ENG" or "SPA" for English/Spanish hello <br /> 
+        <h:form id="LangChoice">
+        <h:inputText id="inputChoice" value="#{translation.choice}"
+               required="true" size="3"
+               />
+		<h:commandButton id="choiceButton" value="Choice" action="#{translation.check}" />
+		<br />                  
+		</h:form>                                   
+    </div>  
+    Choice : #{translation.choice}       
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+   xmlns:ui="http://java.sun.com/jsf/facelets"
+   xmlns:h="http://java.sun.com/jsf/html"
+   xmlns:f="http://java.sun.com/jsf/core">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Interceptors</title>
+</head>
+
+<body>
+   <div id="content">
+      <h1>Interceptors</h1>
+      <p>
+      Method invoked: <b>#{bookShow.str} </b><br />
+      Method intercepted: <b>#{messageBoard.message} </b><br />
+      </p>
+      <div>
+      <h:form id="Inteceptors">
+      
+      <h:commandButton id="method" value="Method" 
+      action="#{bookShow.method}" immediate="true"/>
+      <h:commandButton id="method2" value="Method2" 
+      action="#{bookShow.method2}" immediate="true"/>
+      <h:commandButton id="method3" value="Method3" 
+      action="#{bookShow.method3()}" immediate="true"/>
+      </h:form>
+      </div>     
+   </div>
+	
+   <br style="clear: both" />
+
+</body>
+</html>
